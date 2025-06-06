@@ -16,12 +16,14 @@ rust-version.workspace = true
 log = "0.4"
 memory_addr = "0.3"
 page_table_entry = { path = "../page_table_entry", version = "0.5.3" }
+riscv = { version = "0.13", default-features = false }
 
 [target.'cfg(any(target_arch = "x86_64", doc))'.dependencies]
 x86 = "0.52"
 
-[target.'cfg(any(target_arch = "riscv32", target_arch = "riscv64", doc))'.dependencies]
-riscv = { version = "0.13", default-features = false }
+# See https://github.com/rust-lang/cargo/issues/12358
+# [target.'cfg(any(target_arch = "riscv32", target_arch = "riscv64", doc))'.dependencies]
+# riscv = { version = "0.13", default-features = false }
 
 [package.metadata.docs.rs]
 rustc-args = [ "--cfg" , "doc"]
