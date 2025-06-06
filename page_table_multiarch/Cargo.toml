@@ -20,8 +20,8 @@ page_table_entry = { path = "../page_table_entry", version = "0.5.3" }
 [target.'cfg(any(target_arch = "x86_64", doc))'.dependencies]
 x86 = "0.52"
 
-# [target.'cfg(any(target_arch = "riscv32", target_arch = "riscv64", doc))'.dependencies]
-# riscv = { version = "0.12.1", default-features = false }
+[target.'cfg(any(target_arch = "riscv32", target_arch = "riscv64", doc))'.dependencies]
+riscv = { version = "0.13", default-features = false }
 
 [package.metadata.docs.rs]
 rustc-args = [ "--cfg" , "doc"]
